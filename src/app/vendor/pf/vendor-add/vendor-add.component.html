@@ -1,0 +1,24 @@
+<div ngClass="container">
+  <mat-card>
+    <mat-toolbar color="primary">
+      <span>Adicionar Fornecedor - Pessoa Física</span>
+      <span class="custom-spacer"></span>
+      <div class="custom-button-row">
+        <button mat-button routerLink="/fornecedores">Pesquisar</button>
+        <button mat-button routerLink="/fornecedores/adicionar">Adicionar</button>
+      </div>
+    </mat-toolbar>
+    <mat-card-content>
+
+      <div class="center" style="padding: 80px 0;">
+        <h1>Clique no tipo de fornecedor deseja adicionar</h1>
+        <div>
+          <button mat-stroked-button color="primary" routerLink="/fornecedor/pj/adicionar">Pessoa Jurídica</button>
+          <button mat-stroked-button color="primary" routerLink="/fornecedor/pf/adicionar">Pessoa Física</button>
+
+        </div>
+
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

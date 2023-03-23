@@ -1,0 +1,25 @@
+<div *ngIf="endereco.id; else addEndereco">
+
+  <div ngClass="campos">
+    <p>Endereço:
+      <span>
+        {{ endereco.logradouro}},
+        {{ endereco.numero}},
+        {{ endereco.bairro}},
+        {{ endereco.cidade}},
+        {{ endereco.uf}}
+      </span>
+    </p>
+    <p>Complemento: <span>{{ endereco.complemento}}</span></p>
+    <p>CEP: <span>{{ endereco.cep | mask: '00000-000'}}</span></p>
+
+  </div>
+
+</div>
+<ng-template #addEndereco>
+  <div class="center">
+    <p>
+      Nenhum endereço cadastrado
+    </p>
+  </div>
+</ng-template>

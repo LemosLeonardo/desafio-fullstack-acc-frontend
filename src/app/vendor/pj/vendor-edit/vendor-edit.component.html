@@ -1,0 +1,115 @@
+<div ngClass="container">
+  <mat-card>
+    <mat-toolbar color="primary">
+      <span>Editar Fornecedor - Pessoa Jurídica</span>
+      <span class="custom-spacer"></span>
+      <div class="custom-button-row">
+        <button mat-button routerLink="/fornecedores">Pesquisar</button>
+        <button mat-button routerLink="/fornecedores/adicionar">Adicionar</button>
+      </div>
+    </mat-toolbar>
+    <mat-card-content>
+
+      <div ngClass="container">
+
+        <div ngClass="row justify-content-center">
+          <div ngClass=" col-sm-12">
+            <form [formGroup]="form">
+              <div class="row">
+
+                <div class="col-6">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Nome Fantasia</mat-label>
+                    <input matInput formControlName="nomeFantasia" maxlength="100" minlength="2">
+                  </mat-form-field>
+                </div>
+
+                <div class="col-6 col-md-6 col-lg-3">
+                  <mat-form-field appearance="fill">
+                    <mat-label>CNPJ</mat-label>
+                    <input matInput formControlName="cnpj" mask="00.000.000/0000-00">
+                  </mat-form-field>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Data de abertura</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="dataAbertura">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+                </div>
+
+                <div class="col-md-6">
+                  <mat-form-field appearance="fill">
+                    <mat-label>E-mail</mat-label>
+                    <input matInput formControlName="email">
+                  </mat-form-field>
+                </div>
+                <div class="col-6 d-none d-lg-block"></div>
+
+                <div class="col-6 col-md-4">
+                  <mat-form-field appearance="fill">
+                    <mat-label>CEP</mat-label>
+                    <input matInput formControlName="cep" mask="00000-000" (blur)="getEnderecoPorCEP()">
+                    <mat-icon matSuffix (click)="getEnderecoPorCEP()">
+                      search
+                    </mat-icon>
+                  </mat-form-field>
+                </div>
+
+                <div class="col-6 col-md-2">
+                  <mat-form-field appearance="fill">
+                    <mat-label>UF</mat-label>
+                    <input matInput formControlName="uf" maxlength="2" [readonly]="inputUf">
+                  </mat-form-field>
+                </div>
+
+                <div class="col-6 col-md-3">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Cidade</mat-label>
+                    <input matInput formControlName="cidade" [readonly]="inputCidade">
+                  </mat-form-field>
+                </div>
+
+                <div class="col-6 col-md-3">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Bairro</mat-label>
+                    <input matInput formControlName="bairro" [readonly]="inputBairro">
+                  </mat-form-field>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Logradouro / Rua</mat-label>
+                    <input matInput formControlName="logradouro" [readonly]="inputLogradouro">
+                  </mat-form-field>
+                </div>
+
+                <div class="col-6 col-md-3">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Número</mat-label>
+                    <input matInput formControlName="numero">
+                  </mat-form-field>
+                </div>
+
+                <div class="col-6 col-md-3">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Complemento</mat-label>
+                    <input matInput formControlName="complemento">
+                  </mat-form-field>
+                </div>
+
+              </div>
+              <div class="col-12 right">
+                <button mat-stroked-button color="primary" (click)="onDelete(idVendorPJ)">Deletar</button>
+                <button mat-raised-button color="primary" (click)="onSubmit()">Salvar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+</div>

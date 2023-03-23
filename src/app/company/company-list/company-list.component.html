@@ -1,0 +1,52 @@
+<div ngClass="container">
+  <mat-card>
+    <mat-toolbar color="primary">
+      <span>Empresas</span>
+      <span class="custom-spacer"></span>
+      <div class="custom-button-row">
+        <button mat-button routerLink="/empresas">Pesquisar</button>
+        <button mat-button routerLink="/empresa/adicionar">Adicionar</button>
+      </div>
+    </mat-toolbar>
+    <mat-card-content>
+      <mat-table [dataSource]="company$">
+        <!-- Name Column -->
+        <ng-container matColumnDef="nomeFantasia">
+          <mat-header-cell *matHeaderCellDef> Empresa </mat-header-cell>
+          <mat-cell *matCellDef="let company"> {{company.nomeFantasia}} </mat-cell>
+        </ng-container>
+
+        <!-- Category Column -->
+        <ng-container matColumnDef="cnpj">
+          <mat-header-cell *matHeaderCellDef> CNPJ </mat-header-cell>
+          <mat-cell *matCellDef="let company"> {{company.cnpj | mask: '00.000.000/0000-00'}}</mat-cell>
+        </ng-container>
+
+        <!-- Actions Column -->
+        <ng-container matColumnDef="acoes">
+          <mat-header-cell *matHeaderCellDef class="action-column-header">
+            Ação
+          </mat-header-cell>
+          <mat-cell *matCellDef="let company" class="action-column">
+
+            <button mat-icon-button color="primary" aria-label="Visualizar company"
+              [routerLink]="['/empresa/' + company.id]" title="Visualizar">
+              <mat-icon>visibility</mat-icon>
+            </button>
+
+            <button mat-icon-button color="primary" aria-label="Gerenciar company"
+              [routerLink]="['/empresa/editar/' + company.id]" title="Gerenciar">
+              <mat-icon>settings</mat-icon>
+            </button>
+
+          </mat-cell>
+
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+
+    </mat-card-content>
+  </mat-card>
+</div>

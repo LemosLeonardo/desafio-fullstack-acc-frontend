@@ -1,0 +1,91 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: #D3CCE3;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #E9E4F0, #D3CCE3);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+mat-card {
+  margin-top: 1.2rem;
+}
+
+.custom-spacer {
+  flex: 1 1 auto;
+}
+
+.custom-button-row button,
+.custom-button-row a {
+  margin-right: 8px;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+mat-card-content {
+  margin-top: 1.2rem;
+  max-height: 335px;
+  overflow: auto;
+}
+
+@media only screen and (min-height: 600px) {
+  mat-card-content {
+    max-height: 700px;
+    overflow: auto;
+  }
+}
+
+mat-table {
+  max-height: 100%;
+}
+
+.action-column-header {
+  flex: 0 0 140px;
+}
+
+.action-column {
+  flex: 0 0 170px;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+p {
+  font-size: large;
+}
+
+.campos p span {
+  font-weight: lighter;
+}
+
+mat-grid-tile {
+  display: flexbox;
+}
+
+button{
+  margin: 2px;
+}
+
+.container-400 {
+  max-width: 400px;
+}
