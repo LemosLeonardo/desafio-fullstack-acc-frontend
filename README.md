@@ -163,6 +163,7 @@ Ao Alterar o CEP, a aplicaçao fará uma consulta na API e retornará com os dad
     - Abrir janela de confirmação antes de executar exclução de registro;
 - Adicionar cadastro para fornecedor Pessoa Jurídica
     - Seguir validações propostas pelo desafio
+- Implementar testes
 
 # Melhorias
 - Refatorar tipos any para o tipo específico e trechos de código redundante
