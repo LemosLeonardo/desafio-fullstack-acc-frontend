@@ -154,7 +154,7 @@ Ao Alterar o CEP, a aplicaçao fará uma consulta na API e retornará com os dad
 ![App Screenshot](https://github.com/LemosLeonardo/desafio-fullstack-acc-frontend/blob/master/src/images/fornecedores-editar-deletar-pj.png?raw=true)
 
 
-# Próximos passos
+# Próximas Releases
 
 - Adicionar relação empresa x fornecedor
 - Validação de campos:
