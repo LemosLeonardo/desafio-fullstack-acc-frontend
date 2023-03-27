@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -31,10 +31,10 @@ export class CompanyViewComponent implements OnInit {
   );
 
   constructor(
-    private formBuilder: FormBuilder,
+    @Inject(FormBuilder) private formBuilder: FormBuilder,
+    @Inject(Router) private router: Router,
+    @Inject(ActivatedRoute) private route: ActivatedRoute,
     private companyService: CompanyService,
-    private router: Router,
-    private route: ActivatedRoute,
     private _snackBar: MatSnackBar,
     public dialog: MatDialog
   ) {
